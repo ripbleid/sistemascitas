@@ -1,0 +1,591 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+:root{
+    --azul:#2563eb;
+    --azul2:#1e40af;
+    --azul3:#0f172a;
+    --gris:#64748b;
+    --blanco:#fff;
+    --fondo:#eef4ff;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    background:linear-gradient(135deg,#dbeafe,#eff6ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+}
+
+/*=============================
+      ONDAS DEL FONDO
+=============================*/
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    overflow:hidden;
+}
+
+.background::before{
+    content:"";
+    position:absolute;
+    width:120%;
+    height:120%;
+    left:-10%;
+    top:-10%;
+    background:linear-gradient(135deg,#3b82f6,#1d4ed8);
+    clip-path:ellipse(85% 70% at 20% 20%);
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    width:120%;
+    height:450px;
+    left:-10%;
+    bottom:-180px;
+    background:white;
+    border-radius:50%;
+}
+
+/*=============================
+      CONTENEDOR
+=============================*/
+
+.login-container{
+
+    width:1180px;
+    max-width:95%;
+    height:680px;
+
+    display:grid;
+    grid-template-columns:45% 55%;
+
+    background:#fff;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.18);
+
+}
+
+/*=============================
+      PANEL IZQUIERDO
+=============================*/
+
+.left{
+
+    background:linear-gradient(180deg,#2563eb,#1d4ed8);
+
+    color:white;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:70px;
+
+}
+
+.left::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-90px;
+    right:-90px;
+
+}
+
+.left::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    bottom:-60px;
+    left:-60px;
+
+}
+
+.logo{
+
+    width:100%;
+    text-align:center;
+    position:relative;
+    z-index:2;
+
+}
+
+.circle{
+
+    width:130px;
+    height:130px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:var(--azul);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:55px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+    margin-bottom:35px;
+
+}
+
+.logo h1{
+
+    font-size:46px;
+    font-weight:700;
+    margin-bottom:18px;
+
+}
+
+.logo p{
+
+    font-size:17px;
+
+    line-height:30px;
+
+    opacity:.95;
+
+    max-width:340px;
+
+    margin:auto;
+
+}
+
+/*=============================
+      PANEL DERECHO
+=============================*/
+
+.right{
+
+    background:#f8fbff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:60px;
+
+}
+
+.card{
+
+    width:430px;
+
+}
+
+.card h2{
+
+    color:var(--azul3);
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:var(--gris);
+
+    margin-bottom:40px;
+
+    font-size:15px;
+
+}
+
+/*=============================
+          INPUTS
+=============================*/
+
+.input-group{
+
+    position:relative;
+
+    margin-bottom:24px;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    outline:none;
+
+    background:white;
+
+    border-radius:14px;
+
+    padding-left:58px;
+
+    padding-right:55px;
+
+    font-size:15px;
+
+    box-shadow:
+    0 10px 25px rgba(15,23,42,.08);
+
+    transition:.30s;
+
+}
+
+.input-group input:focus{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 15px 35px rgba(37,99,235,.18);
+
+}
+
+.input-group i:first-child{
+
+    position:absolute;
+
+    left:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--azul);
+
+    font-size:18px;
+
+}
+
+.toggle-password{
+
+    position:absolute;
+
+    right:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#94a3b8;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.toggle-password:hover{
+
+    color:var(--azul);
+
+}
+.options{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin:10px 0 30px;
+
+    font-size:14px;
+
+    color:var(--gris);
+
+}
+
+.options label{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    cursor:pointer;
+
+}
+
+.options input{
+
+    width:16px;
+    height:16px;
+
+    accent-color:var(--azul);
+
+}
+
+.options a{
+
+    color:var(--azul);
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.options a:hover{
+
+    color:var(--azul2);
+
+    text-decoration:underline;
+
+}
+
+/*=============================
+          BOTÓN
+=============================*/
+
+button{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    transition:.30s;
+
+    box-shadow:
+    0 12px 25px rgba(37,99,235,.25);
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 18px 35px rgba(37,99,235,.35);
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+/*=============================
+      EFECTOS
+=============================*/
+
+.card{
+
+    animation:fade .8s ease;
+
+}
+
+.logo{
+
+    animation:leftFade 1s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:none;
+
+    }
+
+}
+
+@keyframes leftFade{
+
+    from{
+
+        opacity:0;
+        transform:translateX(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:none;
+
+    }
+
+}
+
+/*=============================
+      PLACEHOLDER
+=============================*/
+
+input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/*=============================
+      SCROLL
+=============================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+    border-radius:10px;
+
+}
+
+/*=============================
+      RESPONSIVE
+=============================*/
+
+@media(max-width:1100px){
+
+.login-container{
+    width:95%;
+    height:auto;
+    grid-template-columns:1fr;
+}
+
+.left{
+    padding:50px 30px;
+}
+
+.logo h1{
+    font-size:38px;
+}
+
+.logo p{
+    font-size:15px;
+}
+
+.right{
+    padding:45px 30px;
+}
+
+.card{
+    width:100%;
+    max-width:430px;
+}
+
+}
+
+@media(max-width:650px){
+
+body{
+    overflow:auto;
+    padding:20px;
+}
+
+.background::before{
+    clip-path:none;
+}
+
+.login-container{
+    border-radius:20px;
+}
+
+.left{
+    padding:40px 25px;
+}
+
+.circle{
+    width:100px;
+    height:100px;
+    font-size:42px;
+}
+
+.logo h1{
+    font-size:30px;
+}
+
+.logo p{
+    line-height:26px;
+}
+
+.card h2{
+    font-size:30px;
+}
+
+.options{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+button{
+    height:54px;
+}
+
+}

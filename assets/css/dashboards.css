@@ -1,0 +1,587 @@
+/*==========================
+    RESET
+==========================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    display:flex;
+}
+
+/*==========================
+    SIDEBAR
+==========================*/
+
+.sidebar{
+
+    width:260px;
+    height:100vh;
+
+    background:linear-gradient(180deg,#0f2d66,#081f47);
+
+    color:white;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:25px;
+
+}
+
+.logo h2{
+
+    font-size:28px;
+    margin-bottom:40px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    margin-bottom:12px;
+
+}
+
+.sidebar a{
+
+    text-decoration:none;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+    background:#2563eb;
+
+}
+
+.active a{
+
+    background:#2563eb;
+
+}
+
+.logout{
+
+    background:#0c1d42;
+
+}
+
+/*==========================
+      CONTENIDO
+==========================*/
+
+.main{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    min-height:100vh;
+
+}
+
+/*==========================
+      NAVBAR
+==========================*/
+
+.navbar{
+
+    height:75px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 35px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+
+}
+
+.menu{
+
+    font-size:25px;
+
+    cursor:pointer;
+
+}
+
+.user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.user img{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+}
+
+.user div{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.user small{
+
+    color:#777;
+
+}
+
+/*==========================
+      CONTENIDO
+==========================*/
+
+.contenido{
+
+    padding:35px;
+
+}
+
+.contenido h1{
+
+    color:#1e293b;
+
+    margin-bottom:5px;
+
+}
+
+.contenido p{
+
+    color:#64748b;
+
+    margin-bottom:30px;
+
+}
+
+/*==========================
+      TARJETAS
+==========================*/
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.card h3{
+
+    color:#64748b;
+
+    margin-bottom:15px;
+
+}
+
+.card h2{
+
+    color:#2563eb;
+
+    font-size:34px;
+
+}
+/*==========================
+    PANEL INFERIOR
+==========================*/
+
+.paneles{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-top:30px;
+
+}
+
+.panel{
+
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+}
+
+.panel h2{
+
+    font-size:20px;
+    color:#1e293b;
+    margin-bottom:20px;
+
+}
+
+/*==========================
+      CITAS
+==========================*/
+
+.cita{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #eef2f7;
+
+}
+
+.cita:last-child{
+
+    border:none;
+
+}
+
+.info{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+.avatar{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:bold;
+
+}
+
+.info h4{
+
+    color:#1e293b;
+    margin-bottom:4px;
+
+}
+
+.info span{
+
+    color:#64748b;
+    font-size:14px;
+
+}
+
+.hora{
+
+    color:#2563eb;
+    font-weight:600;
+
+}
+
+/*==========================
+      GRAFICA
+==========================*/
+
+.grafica{
+
+    width:100%;
+    height:280px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:2px dashed #dbe4f3;
+    border-radius:15px;
+
+    color:#94a3b8;
+    font-size:18px;
+
+}
+
+/*==========================
+      ANIMACIONES
+==========================*/
+
+.card,
+.panel{
+
+    animation:subir .5s ease;
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:none;
+
+    }
+
+}
+
+/*==========================
+      RESPONSIVE
+==========================*/
+
+@media(max-width:1200px){
+
+.cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.paneles{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.sidebar{
+
+    width:85px;
+
+    padding:20px 10px;
+
+}
+
+.logo h2{
+
+    font-size:18px;
+    text-align:center;
+
+}
+
+.sidebar a{
+
+    justify-content:center;
+    padding:16px 10px;
+    font-size:14px;
+
+}
+
+.main{
+
+    margin-left:85px;
+    width:calc(100% - 85px);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.navbar{
+
+    padding:0 20px;
+
+}
+
+.user div{
+
+    display:none;
+
+}
+
+.contenido{
+
+    padding:20px;
+
+}
+
+}
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:45px;
+
+}
+
+.logo i{
+
+    font-size:28px;
+    color:#22d3ee;
+
+}
+
+.logo span{
+
+    font-size:28px;
+    font-weight:600;
+
+}
+
+.sidebar i{
+
+    width:22px;
+
+}
+
+.logout{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.logout:hover{
+
+    background:#2563eb;
+
+}
+
+.user>.fa-bell{
+
+    font-size:20px;
+    color:#64748b;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.user>.fa-bell:hover{
+
+    color:#2563eb;
+
+}
+
+.card{
+
+    border:1px solid #eef2f7;
+
+}
+
+.panel{
+
+    border:1px solid #eef2f7;
+
+}
+
+.card:nth-child(1){
+
+border-left:6px solid #2563eb;
+
+}
+
+.card:nth-child(2){
+
+border-left:6px solid #14b8a6;
+
+}
+
+.card:nth-child(3){
+
+border-left:6px solid #f59e0b;
+
+}
+
+.card:nth-child(4){
+
+border-left:6px solid #ef4444;
+
+}
