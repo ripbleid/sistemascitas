@@ -141,6 +141,10 @@ if(isset($_POST['ingresar'])){
                             ¿Olvidaste tu contraseña?
                         </a>
 
+                        <a href="registro.php" class="forgot-link"> 
+                            Registrarse
+                        </a>
+
                     </div>
 
                     <button type="submit" name="ingresar">
