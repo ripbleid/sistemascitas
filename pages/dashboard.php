@@ -620,7 +620,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!button || !container) return;
 
     button.addEventListener("click", function () {
-        const isOpen = container.classList.toggle("sidebar-collapsed") === false;
+        const sidebar = document.getElementById("sidebarMenu");
+        const isMobile = window.matchMedia("(max-width: 900px)").matches;
+        let isOpen;
+        if (isMobile && sidebar) {
+            isOpen = sidebar.classList.toggle("open");
+        } else {
+            isOpen = !container.classList.toggle("sidebar-collapsed");
+        }
         button.setAttribute("aria-expanded", String(isOpen));
     });
 });
